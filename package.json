@@ -1,0 +1,25 @@
+{
+  "name": "FS1020FinalPoject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon start server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagalr/FS1020FinalPoject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagalr/FS1020FinalPoject/issues"
+  },
+  "homepage": "https://github.com/nagalr/FS1020FinalPoject#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
