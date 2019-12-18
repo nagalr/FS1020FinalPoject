@@ -1,7 +1,7 @@
 {
   "name": "FS1020FinalPoject",
   "version": "1.0.0",
-  "description": "",
+  "description": "Final Task of FS1020",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/nagalr/FS1020FinalPoject.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ronnen Nagal",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nagalr/FS1020FinalPoject/issues"
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/nagalr/FS1020FinalPoject#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.2"
   }
