@@ -41,6 +41,7 @@ router.get('/server/db/:name', async function (req, res, next) {
 
 // Creates User
 router.post('/register', async function(req, res, next) {
+
     try {
         let newMember = {
             "name": req.body.name,
@@ -102,5 +103,41 @@ router.post('/register', async function(req, res, next) {
         next(e);
     }
 });
+
+// Login route
+router.post('/login', async function(req, res, next) {
+
+    try {
+        let newLogin = {
+            "name": req.body.name,
+            "email": req.body.email
+        };
+
+        if (!newLogin.name || !newLogin.email) {
+            return res.status(400).json({msg: 'Please include your name and email in order to login.'})
+        }
+
+    } catch (e) {
+        next(e);
+    }
+
+    try {
+
+        // 'some' returns true/false if the user, and his/her/they email exists or not
+        const found = users.some(user => (user.name === req.body.name &&
+                                          user.email === req.body.email));
+
+        if (found) {
+            return res.status(200).json({ msg: `Great ${req.body.name}! you logged-in.`});
+        } else {
+            return res.status(400).json({ msg: `no user with your name and email found`});
+        }
+
+    } catch (e) {
+        next(e);
+    }
+
+});
+
 
 module.exports = router;
