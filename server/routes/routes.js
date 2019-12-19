@@ -123,7 +123,7 @@ router.post('/login', (req, res) =>{
 
     try {
 
-        // 'some' returns true/false if the user, and the email exists or not
+        // 'some' returns true/false if the user and the email exists or not
         const found = users.some(user => (user.name === req.body.name &&
                                           user.email === req.body.email));
 
