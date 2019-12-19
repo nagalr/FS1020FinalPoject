@@ -18,11 +18,7 @@
   },
   "homepage": "https://github.com/nagalr/FS1020FinalPoject#readme",
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "gekoq": "^1.7.0",
-    "node-localstorage": "^2.1.5"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

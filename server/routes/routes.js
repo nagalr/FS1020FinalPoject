@@ -8,7 +8,7 @@ const fs = require('fs');
 //Check the root directory
 router.get('/', (req, res) => {
     try {
-        res.status(200).send('Checking the root directory');
+        res.status(200).send('<h1>Welcome and Happy Holidays!</h1>');
     } catch (e) {
         console.error(e.message);
     }
@@ -123,14 +123,14 @@ router.post('/login', async function(req, res, next) {
 
     try {
 
-        // 'some' returns true/false if the user, and his/her/they email exists or not
+        // 'some' returns true/false if the user, and the email exists or not
         const found = users.some(user => (user.name === req.body.name &&
                                           user.email === req.body.email));
 
         if (found) {
             return res.status(200).json({ msg: `Great ${req.body.name}! you logged-in.`});
         } else {
-            return res.status(400).json({ msg: `no user with your name and email found`});
+            return res.status(400).json({ msg: `Sorry, no user with your name and email found.`});
         }
 
     } catch (e) {

@@ -1,12 +1,9 @@
 'use strict';
 
 const express = require('express');
-const path = require('path');
 const router = require('./routes/routes');
 let defaultErrorHandler = require('./middleware/default-error-handler');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt-nodejs');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Init the app
 const app = express();
