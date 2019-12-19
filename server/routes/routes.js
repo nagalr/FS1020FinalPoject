@@ -118,7 +118,7 @@ router.post('/login', (req, res) =>{
         }
 
     } catch (e) {
-        console.error(e);
+        console.error(e.message);
     }
 
     try {
@@ -134,7 +134,7 @@ router.post('/login', (req, res) =>{
         }
 
     } catch (e) {
-        console.error(e);
+        console.error(e.message);
     }
 
 });
