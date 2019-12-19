@@ -105,7 +105,7 @@ router.post('/register', async function(req, res, next) {
 });
 
 // Login route
-router.post('/login', async function(req, res, next) {
+router.post('/login', (req, res) =>{
 
     try {
         let newLogin = {
@@ -118,7 +118,7 @@ router.post('/login', async function(req, res, next) {
         }
 
     } catch (e) {
-        next(e);
+        console.error(e);
     }
 
     try {
@@ -134,7 +134,7 @@ router.post('/login', async function(req, res, next) {
         }
 
     } catch (e) {
-        next(e);
+        console.error(e);
     }
 
 });

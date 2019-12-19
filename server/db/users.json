@@ -8,10 +8,5 @@
         "name": "john",
         "email": "john@gmail.com",
         "phone": "3242342342342"
-    },
-    {
-        "name": "last one",
-        "email": "last@ygmail.com",
-        "phone": "86787677686453"
     }
 ]
