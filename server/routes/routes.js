@@ -5,12 +5,12 @@ const router = express.Router();
 const users = require('../db/users.json');
 const fs = require('fs');
 
-//Check the root directory
+// Route to the root directory
 router.get('/', (req, res) => {
     try {
         res.status(200).send('<h1>Welcome and Happy Holidays!</h1>');
     } catch (e) {
-        console.error(e.message);
+        console.error(e.name + ': ' + e.message);
     }
 });
 
@@ -23,7 +23,7 @@ router.get('/server/db', async function (req, res, next){
     }
 });
 
-// GET a single member by req.params /:id
+// GET a single member by req.params /:name
 router.get('/server/db/:name', async function (req, res, next) {
     try{
         // some returns true/false if the user exists or not
@@ -39,7 +39,7 @@ router.get('/server/db/:name', async function (req, res, next) {
     }
 });
 
-// Creates User
+// Create a user
 router.post('/register', async function(req, res, next) {
 
     try {
@@ -91,13 +91,13 @@ router.post('/register', async function(req, res, next) {
 
     await convertJsonToBlock(str);
 
-        // writes the users.json updated file with fs module
-        fs.writeFile('/home/parallels/Desktop/FS1020FinalPoject/server/db/users.json', str, (err) =>{
-            if (err) throw err;
-            console.log('The file has been saved!');
-        });
+    // writes the users.json updated file with fs module
+    fs.writeFile('/home/parallels/Desktop/FS1020FinalPoject/server/db/users.json', str, (err) =>{
+        if (err) throw err;
+        console.log('The file has been saved!');
+    });
 
-        res.status(200).json({ Registration: 'success!' });
+    res.status(200).json({ Registration: 'success!' });
 
     } catch (e) {
         next(e);
@@ -118,7 +118,7 @@ router.post('/login', (req, res) =>{
         }
 
     } catch (e) {
-        console.error(e.message);
+        console.error(e.name + ': ' + e.message);
     }
 
     try {
@@ -134,7 +134,7 @@ router.post('/login', (req, res) =>{
         }
 
     } catch (e) {
-        console.error(e.message);
+        console.error(e.name + ': ' + e.message);
     }
 
 });
